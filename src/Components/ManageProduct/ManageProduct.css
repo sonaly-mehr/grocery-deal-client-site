@@ -1,0 +1,16 @@
+.manage-product{
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 10px;
+}
+.manage-product h6{
+    width: 132px;
+    margin: 10px 0;
+    margin-left: -16%;
+}
+.manage-product h6.weight{
+    margin-left: 0%;
+    width: 56px;
+}
+.manage-product span{}
+.manage-product button{}

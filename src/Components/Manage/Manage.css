@@ -1,0 +1,19 @@
+.manage-product-wrap{
+    width: 290%;
+    margin-left: 122%;
+    margin-top: -105%;
+}
+.manage-product-wrap h4{
+    font-weight: 600;
+    margin-bottom: 35px;
+}
+.manage-product-table{
+    background: #ECEDF1;
+    width: 85%;
+    padding: 10px 26px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.manage-product-table span{}

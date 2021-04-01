@@ -1,0 +1,52 @@
+.admin-section{
+
+}
+.admin-panel{
+    background-color: #1F3D37;
+    height: 100vh;
+    position: relative;
+    width: 24%;
+}
+.admin-panel::before{
+    content: "";
+    position: absolute;
+    background: #1F3D37;
+    top: 0;
+    bottom: 0;
+    left: -12rem;
+    right: 100%;}
+
+.admin-header{}
+.admin-header h4{
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 23px;
+    letter-spacing: 2px;
+    padding-top: 40px;
+}
+.admin-menu{
+    margin-left: -39px;
+}
+.admin-menu ul{
+    list-style: none;
+    margin-top:40px;
+    display: block;
+    padding-top: 30%;
+}
+.admin-menu ul li{
+    padding:20px 0;
+}
+.admin-menu ul li .menu-icon{
+    color: #fff;
+    font-size: 14px;
+    margin-right: 5px;
+}
+.admin-menu ul li a{
+    text-decoration: none;
+    text-decoration: none;
+    color: #fff;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 500;
+}

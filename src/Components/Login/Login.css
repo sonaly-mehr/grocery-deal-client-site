@@ -1,0 +1,63 @@
+.login-info{
+    width:400px;
+    margin: 0 auto;
+}
+
+.login-details{
+    border: 1px solid lightgray;
+    margin-top: 100px;
+    padding: 30px;
+}
+.login-details h5{
+    margin-bottom: 17px;
+    font-weight: 700;
+}
+.login-details input[type=email], .login-details input[type=password], .nameField{
+    margin-bottom: 20px;
+    width: 100%;
+}
+.login-details input[type=submit]{
+    width: 100%;
+    background: #FF6A48;
+    border: none;
+    padding: 7px;
+    color: #fff;
+    font-weight: 700;
+    margin-top: 20px;
+}
+.login-details p{margin-top: 17px;}
+.or-sec {text-align: center; position: relative;}
+.or-sec p:before{
+   content: "";
+   position: absolute;
+   left:13px;
+   top:20px;
+   width:100px;
+   background-color: lightgray;
+}
+.login-details label{
+   margin-right: 77px;
+   margin-left: 8px;
+   font-size: 15px;
+}
+.pass-retrieve, p, a{
+    font-size: 15px;
+}
+a{
+    text-decoration: underline;
+}
+.login-btn{
+    width: 81%;
+    background: #fff;
+    border: 1px solid lightgray;
+    border-radius: 16px;
+    margin-bottom: 31px;
+    padding: 6px 0;
+    margin-left: 36px;
+}
+.icon{
+    position: relative;
+    left: -19%;
+    color: blue;
+}
+

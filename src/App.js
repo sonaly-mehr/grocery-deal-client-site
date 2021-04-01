@@ -1,25 +1,123 @@
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Home from './Components/Home/Home';
+import Orders from './Components/Orders/Orders';
+import Admin from './Components/Admin/Admin'
+import Login from './Components/Login/Login'
+import NotFound from './Components/NotFound/NotFound';
+import { createContext, useState } from 'react';
+import userEvent from '@testing-library/user-event';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+export const UserContext= createContext();
+
+function App(){
+  const [loggedInUser, setLoggedInUser]= useState(false);
+
+  
+
+
+    
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+    
+
+  <div className="home-section">
+    <div className="container">
+    <div className="header-section">
+      {/* <div className="row">
+        <div className="col-md-4"> */}
+          <div className="header-name">
+            <h4>Fresh Valley</h4>
+          </div>
+        </div>
+
+        {/* <div className="col-md-8"> */}
+          <div className="menu">
+            <Router>
+              
+              <nav>
+                <ul>
+                  <li>
+                    <Link to="/">Home</Link>
+                  </li>
+                  <li>
+                    <Link to="/orders">Orders</Link>
+                  </li>
+                  <li>
+                    <Link to="/admin">Admin</Link>
+                  </li>
+                  <li>
+                    <Link to="/home">Detail</Link>
+                  </li>
+                  {!loggedInUser ?
+                  <li>
+                  <Link className="login" to="/login">Login</Link>
+                </li>
+                  :
+                  <li ><Link to="/login" style={{color: 'green'}}>{loggedInUser.email}</Link></li>
+                  
+                  
+                  
+                 }
+                </ul>
+              </nav>
+
+
+
+              <Switch>
+                <Route path="/home">
+                  <Home></Home>
+                </Route>
+
+                <Route exact path="/">
+                  <Home></Home>
+                </Route>
+
+                <Route path="/orders">
+                  <Orders></Orders>
+                </Route>
+
+                <Route path="/admin">
+                  <Admin></Admin>
+                </Route>
+
+                <Route path="/login">
+                  <Login></Login>
+                </Route>
+
+                <PrivateRoute path="/orders">
+                  <Orders></Orders>
+                </PrivateRoute>
+
+                <Route path="*">
+                  <NotFound></NotFound>
+                </Route>
+
+              </Switch>
+
+
+            </Router>
+          </div>
+        </div>
+        {/* </div> */}
+      {/* </div> */}
+
+    {/* </div> */}
+  </div>
+  </UserContext.Provider>
+
+
   );
 }
 
 export default App;
+ 
+
+
