@@ -5,7 +5,7 @@ import { faTrashAlt } from '@fortawesome/fontawesome-free-regular'
 
 const ManageProduct = ({ pd }) => {
     const deleteProduct = (id) => {
-        fetch(`http://localhost:5055/delete/${id}`, {
+        fetch(`https://sheltered-stream-59836.herokuapp.com/delete/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

@@ -6,7 +6,7 @@ const Manage = () => {
     const [manageProducts, setManageProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5055/manage')
+        fetch('https://sheltered-stream-59836.herokuapp.com/manage')
             .then(res => res.json())
             .then(data => setManageProducts(data))
     }, [])

@@ -28,7 +28,7 @@ const Checkout = () => {
     });
 
     useEffect(() => {
-        fetch(`http://localhost:5055/product/${productId}`)
+        fetch(`https://sheltered-stream-59836.herokuapp.com/product/${productId}`)
             .then(res => res.json())
             .then(data => setProductKey(data))
     }, [productId])
@@ -46,7 +46,7 @@ const Checkout = () => {
     };
     const handleCheckOut= ()=>{
         const newCheckOut= {...loggedInUser, ...selectedDate, ...productInfo};
-        fetch('http://localhost:5055/addCheckout', {
+        fetch('https://sheltered-stream-59836.herokuapp.com/addCheckout', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(newCheckOut)

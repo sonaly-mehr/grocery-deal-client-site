@@ -17,7 +17,7 @@ const AddProduct = () => {
             price: data.price,
             imageURL: imageURL
         };
-        const url= `http://localhost:5055/admin`;
+        const url= `https://sheltered-stream-59836.herokuapp.com/admin`;
 
 
         fetch(url, {

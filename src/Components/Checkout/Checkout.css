@@ -36,6 +36,12 @@
     margin-top: 25px;
     margin-left: 84%;
 }
+.checkout button a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+}
 
 .product-desc h5{}
 .total h4{}
