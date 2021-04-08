@@ -17,3 +17,25 @@
     margin-bottom: 15px;
 }
 .manage-product-table span{}
+
+@media only screen and (max-width: 480px){
+    .manage-product-wrap{
+        margin-top: -310%;
+    }
+    .manage-product-table{
+        margin-left: -7%;
+    }
+    .manage-product h6{
+        margin-left: -15%;
+        font-size: 13px;
+    }
+    .manage-product h6.price {
+        padding-left: 7%;
+    }
+    .manage-product button{
+        position: relative;
+        left: -23%;
+    }
+    .manage-product h6.weight {
+        margin-left: -8%;}
+  }

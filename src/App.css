@@ -13,6 +13,9 @@
   font-size: 22px;
   color: currentColor;
 }
+.header-name h4 span{
+  color:#28C852;
+}
 .menu{}
 .menu ul{
   display: flex;
@@ -40,5 +43,9 @@
 @media only screen and (max-width: 480px){
   .header-section{
     float: none;
+  }
+  .header-name h4{
+    display: block;
+    text-align: center;
   }
 }

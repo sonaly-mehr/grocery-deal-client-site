@@ -1,0 +1,23 @@
+.manage-orders{}
+.order-product-desc{
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+    border-bottom: 1px solid #CFCFCF;
+    margin-bottom: 5px;
+}
+.order-product-desc h5{
+    font-size: 19px;
+}
+.manage-orders h5.date{
+    position: relative;
+    left: 7%;
+}
+@media only screen and (max-width: 480px){
+    .manage-orders h5{
+        font-size:14px;
+    }
+    .manage-orders h5.date{
+        left: 0
+    }
+}

@@ -15,12 +15,9 @@ const Login = () => {
     var provider = new firebase.auth.GoogleAuthProvider();
     const [newUser, setnewUser] = useState(false);
     const [user, setUser] = useState({
-        isSignedIn: false,
+        // isSignedIn: false,
         name: '',
-        email: '',
-        photo: '',
-        error: '',
-        success: ''
+        email: ''
     })
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -33,15 +30,15 @@ const Login = () => {
             .then(res => {
                 const { displayName, photoURL, email } = res.user;
                 const SingedIn = {
-                    isSignedIn: true,
-                    name: displayName,
-                    email: email,
-                    photo: photoURL
+                    // isSignedIn: true,
+                    // name: displayName,
+                    email: email
+                    // photo: photoURL
                 }
                 setUser(SingedIn);
                 setLoggedInUser(SingedIn);
                 history.replace(from);
-                console.log(displayName, photoURL, email);
+                // console.log(displayName, photoURL, email);
             })
     }
 
@@ -69,7 +66,7 @@ const Login = () => {
             const isPasswordValid = e.target.value.length > 6;
             const isPasswordHasNumber = /\d{1}/.test(e.target.value);
             isFormValid = isPasswordValid && isPasswordHasNumber;
-            console.log(isFormValid);
+            // console.log(isFormValid);
         }
         if (isFormValid) {
             let newUserInfo = { ...user };
@@ -85,8 +82,6 @@ const Login = () => {
 
                 .then(res => {
                     const newUserInfo = { ...user };
-                    newUserInfo.error = '';
-                    newUserInfo.success = true;
                     setUser(newUserInfo);
                 })
                 .catch((error) => {
@@ -102,8 +97,8 @@ const Login = () => {
             firebase.auth().signInWithEmailAndPassword(user.email, user.password)
                 .then(res => {
                     const newUserInfo = { ...user };
-                    newUserInfo.error = '';
-                    newUserInfo.success = true;
+                    // newUserInfo.error = '';
+                    // newUserInfo.success = true;
                     setUser(newUserInfo);
                     setLoggedInUser(newUserInfo);
                     history.replace(from);

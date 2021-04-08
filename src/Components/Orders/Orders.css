@@ -1,0 +1,32 @@
+.order-summary{}
+.order-summary h3{
+    text-align: center;
+    padding: 27px 0;
+    font-size: 35px;
+    color: #67BA6E;
+    font-weight: 700;    
+}
+.order-description{}
+.order-table-desc{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid cadetblue;
+    margin: 35px 0;
+}
+.order-table-desc h6{
+    font-size: 23px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.orderDate {
+    position: relative;
+    left: 10%;
+}
+.orderName{
+    position: relative;
+    left: 6%;
+}
+.orderPrice{
+    position: relative;
+    left: 2%;
+}

@@ -1,7 +1,6 @@
 .manage-product{
     display: flex;
     justify-content: space-evenly;
-    margin-left: 10px;
 }
 .manage-product h6{
     width: 132px;
@@ -9,8 +8,18 @@
     margin-left: -16%;
 }
 .manage-product h6.weight{
-    margin-left: 0%;
+    margin-left: -5%;
     width: 56px;
 }
+.manage-product h6.price{
+    padding-left: 14%;
+}
 .manage-product span{}
-.manage-product button{}
+.manage-product button{
+   background: red;
+   border: none;
+   margin-bottom: 17px;
+   color: #fff;
+   padding: 1px 5px;
+   border-radius: 5px;
+}

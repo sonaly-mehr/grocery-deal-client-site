@@ -5,7 +5,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  useHistory
 } from "react-router-dom";
 import Home from './Components/Home/Home';
 import Orders from './Components/Orders/Orders';
@@ -15,15 +16,12 @@ import NotFound from './Components/NotFound/NotFound';
 import { createContext, useState } from 'react';
 import userEvent from '@testing-library/user-event';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import Checkout from './Components/Checkout/Checkout';
 export const UserContext= createContext();
 
 function App(){
   const [loggedInUser, setLoggedInUser]= useState(false);
 
-  
-
-
-    
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
     
@@ -34,7 +32,7 @@ function App(){
       {/* <div className="row">
         <div className="col-md-4"> */}
           <div className="header-name">
-            <h4>Fresh Valley</h4>
+            <h4><span>Grocery</span> Deal</h4>
           </div>
         </div>
 
@@ -80,20 +78,24 @@ function App(){
                   <Home></Home>
                 </Route>
 
-                <Route path="/orders">
-                  <Orders></Orders>
-                </Route>
-
-                <Route path="/admin">
+                <PrivateRoute path="/admin">
                   <Admin></Admin>
-                </Route>
+                </PrivateRoute>
+
+                <PrivateRoute path="/orders">
+                   <Orders></Orders>
+                </PrivateRoute>
 
                 <Route path="/login">
                   <Login></Login>
                 </Route>
 
+                <PrivateRoute path="/products/:productId">
+                   <Checkout></Checkout>
+                </PrivateRoute>
+
                 <PrivateRoute path="/orders">
-                  <Orders></Orders>
+                   <Orders></Orders>
                 </PrivateRoute>
 
                 <Route path="*">

@@ -3,10 +3,12 @@ import './AddProduct.css';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 const AddProduct = () => {
     const { register, handleSubmit, watch, errors } = useForm();
     const [imageURL, setImageURL]= useState(null);
+    const history= useHistory()
     
     const onSubmit = data => {
         const groceryData={
@@ -26,6 +28,7 @@ const AddProduct = () => {
             body: JSON.stringify(groceryData)
         })
         .then(res=> console.log('server side respond'))
+        history.push('/admin');
     };
 
     const handleImageUpload= event =>{

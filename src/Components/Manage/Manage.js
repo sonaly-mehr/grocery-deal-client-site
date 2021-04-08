@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import ManageProduct from '../ManageProduct/ManageProduct';
+import { CircularProgress } from '@material-ui/core';
 import './Manage.css';
 const Manage = () => {
-    const [manageProducts, setManageProducts]= useState([]);
+    const [manageProducts, setManageProducts] = useState([]);
 
-    useEffect(()=>{
-            fetch('http://localhost:5055/manage')
-            .then(res=> res.json())
+    useEffect(() => {
+        fetch('http://localhost:5055/manage')
+            .then(res => res.json())
             .then(data => setManageProducts(data))
     }, [])
     return (
@@ -17,7 +18,10 @@ const Manage = () => {
                 <span>Price</span> <span>Action</span>
             </div>
             {
-                manageProducts.map(pd=> <ManageProduct pd={pd}></ManageProduct>)
+                manageProducts.length === 0 && <h2 className="spinner"><CircularProgress /></h2>
+            }
+            {
+                manageProducts.map(pd => <ManageProduct pd={pd}></ManageProduct>)
             }
         </div>
     );

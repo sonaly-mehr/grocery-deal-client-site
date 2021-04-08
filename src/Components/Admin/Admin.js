@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,8 +10,10 @@ import './Admin.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBox, faPlus, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import Manage from '../Manage/Manage';
+import { UserContext } from '../../App';
 
 const Admin = () => {
+  const [loggedInUser, setLoggedInUser]= useContext(UserContext);
   return (
 
     <div className="admin-section">
@@ -45,7 +47,7 @@ const Admin = () => {
                     </Route>
 
                     <Route path="/edit">
-                      <AddProduct></AddProduct>
+                      <Manage></Manage>
                     </Route>
 
                     <Route path="/">
